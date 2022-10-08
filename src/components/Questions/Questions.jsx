@@ -5,7 +5,16 @@ import Answers from '../Answers/Answers';
 const Questions = () => {
     const { data, isLoading } = useFetch();
     const { Counter, increment } = useCounter(-1);
-    const [ currentQuestion, setcurrentQuestion] = useState({question:"",answers:[]});
+    const [ currentQuestion, setcurrentQuestion] = useState({question:"",answers:[],correct_answer:""});
+
+    const validateAnswer = (optionSelected)=>{
+        const {answers,correct_answer} = currentQuestion;
+        if(optionSelected!==currentQuestion.correct_answer){
+            answers.find((answer)=>answer.option==optionSelected).class="bad";
+        }
+        answers.find((answer)=>answer.option==correct_answer).class="good";
+        setcurrentQuestion({...currentQuestion,answers})
+    }   
 
     const questionStructure = () => {
         if(!isLoading){
@@ -15,7 +24,8 @@ const Questions = () => {
             console.log(data.data.results[Counter]);
             const questionStructure = {
                 question,
-                answers:[]
+                answers:[],
+                correct_answer:""
             };
 
             // Validando si la respuesta es de falso/verdadero o multiples
@@ -36,8 +46,11 @@ const Questions = () => {
                 class: ''
             })
 
+            // Guardando la opcion de la respuesta correcta
+            questionStructure.correct_answer=Options[randomPos];
+
             // Se elimina la opcion que fue elejida para la respuesta correcta
-            Options=Options.filter(item=>item!==Options[randomPos]);
+            Options = Options.filter(item=>item!==Options[randomPos]);
             
             Options.map((item,index)=>{
 
@@ -49,6 +62,8 @@ const Questions = () => {
                 })
 
             });
+
+            questionStructure.answers=questionStructure.answers.sort((a,b)=>a.option-b.option);
 
             setcurrentQuestion(questionStructure);
         }
@@ -65,10 +80,12 @@ const Questions = () => {
             <h1>{currentQuestion.question}</h1>
             {currentQuestion.answers.map(item=>(
                 <Answers 
+                    key={item.option}
                     option={item.option}
                     answer={item.answer}
                     correct={item.correct}
                     className={item.class}
+                    validate={validateAnswer}
                 />
             ))}
             {/* <button onClick={()=>questionStructure()}>yaider</button> */}
