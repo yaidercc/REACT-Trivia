@@ -1,8 +1,14 @@
+import { useState } from 'react'
+import Questions from './components/Questions/Questions'
+import { StartTrivia } from './components/StartTrivia/StartTrivia';
 
 const Trivia = () => {
+  const [Start, setStart] = useState(false);
   return (
-    <div>Trivia</div>
+    <>
+      {Start ? <Questions/> : <StartTrivia setStart={setStart}/>}
+    </>
   )
 }
 
-export default Trivia;
+export default Trivia
