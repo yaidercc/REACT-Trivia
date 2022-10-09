@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Score = ({score,setState}) => {
+export const Score = ({score,setState}) => {
   return (
     <div>
       <h1>Score</h1>
@@ -9,5 +7,3 @@ const Score = ({score,setState}) => {
     </div>
   )
 }
-
-export default Score;

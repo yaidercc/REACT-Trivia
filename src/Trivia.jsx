@@ -1,8 +1,5 @@
 import { useState } from 'react'
-import Questions from './components/Questions/Questions'
-import Score from './components/Results/Score';
-import { StartTrivia } from './components/StartTrivia/StartTrivia';
-
+import { Questions,Score,StartTrivia } from "./components/index";
 const Trivia = () => {
   const [state, setState] = useState({score:false,start:false});
 

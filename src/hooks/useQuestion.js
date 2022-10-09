@@ -9,6 +9,7 @@ export const useQuestion = () => {
     const { Counter, increment } = useCounter(-1,10);
     const [ currentQuestion, setcurrentQuestion ] = useState({question:"",answers:[],correct_answer:"",answered:false});
     const [ triviaStatus, settriviaStatus ] = useState({finished:false,score:10});
+    let score=10;
 
     /**
      * Valida la respuesta elejida
@@ -24,10 +25,9 @@ export const useQuestion = () => {
         if(optionSelected!==currentQuestion.correct_answer){
             answers.find((answer)=>answer.option==optionSelected).class="bad";
             // Disminuye el puntaje
-            const score=triviaStatus.score-1;
-
-            settriviaStatus({...triviaStatus,score})
-            console.log(triviaStatus);
+            score--;
+            settriviaStatus({...triviaStatus,score});
+            console.log(score);
         }
         answers.find((answer)=>answer.option==correct_answer).class="good";
         
@@ -49,7 +49,7 @@ export const useQuestion = () => {
     const questionStructure = () => {
         if(!isLoading){
             increment(1);
-
+            if(triviaStatus.finished) return;
             // Oculta el boton de siguiente pregunta
             setcurrentQuestion({...currentQuestion,answered:false});
 
@@ -113,6 +113,7 @@ export const useQuestion = () => {
         validateAnswer,
         isLoading,
         currentQuestion,
-        triviaStatus
+        triviaStatus,
+        score
     }
 }

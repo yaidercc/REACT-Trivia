@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Answer.scss'
 
-const Answers = ({option, answer, correct, className,validate }) => {
+export const Answers = ({option, answer, correct, className,validate }) => {
   return (
     <button className={className=="" ?'Container-answer': `Container-answer ${className}`}  onClick={()=>validate(option)}>
       <p className='opc'>{option}</p>
@@ -12,7 +12,6 @@ const Answers = ({option, answer, correct, className,validate }) => {
   )
 }
 
-export default Answers
 
 Answers.propTypes = {
   option: PropTypes.string.isRequired,
