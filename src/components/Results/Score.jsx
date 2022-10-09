@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Score = () => {
+const Score = ({score,setState}) => {
   return (
-    <div>Score</div>
+    <div>
+      <h1>Score</h1>
+      <p> {score}/10 </p>
+      <button onClick={()=>setState({score:false,start:false})}>Volver</button>
+    </div>
   )
 }
 

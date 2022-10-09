@@ -5,8 +5,16 @@ import Answers from '../Answers/Answers';
 /**
  * TODO: validar que al selccionar una respuesta no se pueda volver a seleccionar otra respuesta
  */
-const Questions = () => {
-    const { questionStructure,validateAnswer,isLoading,currentQuestion,answered } = useQuestion();
+const Questions = ({setScore,}) => {
+    const { 
+        questionStructure,
+        validateAnswer,
+        isLoading,
+        currentQuestion,
+        answered,
+        triviaStatus
+        } 
+    = useQuestion();
 
     return (
         <>
@@ -21,7 +29,8 @@ const Questions = () => {
                     validate={validateAnswer}
                 />
             ))}
-            {answered && <button onClick={()=>questionStructure()}>Siguiente</button> }
+            {currentQuestion.answered && <button onClick={()=>questionStructure()}>Siguiente</button> }
+            {triviaStatus.finished && <button onClick={()=>setScore({start:true, score:triviaStatus.score})}>Terminar</button> }
         </>
     )
 }

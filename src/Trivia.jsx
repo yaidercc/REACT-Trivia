@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import Questions from './components/Questions/Questions'
+import Score from './components/Results/Score';
 import { StartTrivia } from './components/StartTrivia/StartTrivia';
 
 const Trivia = () => {
-  const [Start, setStart] = useState(false);
+  const [state, setState] = useState({score:false,start:false});
+
+  if(state.score) return <Score setState={setState} score={state.score} />
+
   return (
     <>
-      {Start ? <Questions/> : <StartTrivia setStart={setStart}/>}
+      {state.start ? <Questions setScore={setState}/> : <StartTrivia setStart={setState}/>}
     </>
   )
 }
