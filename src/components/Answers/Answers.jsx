@@ -2,9 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Answer.scss'
 
-export const Answers = ({option, answer, correct, className,validate }) => {
+export const Answers = ({option, answer, correct, className,validate, setScore,score }) => {
+
+  const validateAnswer=()=>{
+    correct || setScore(score-1);
+    validate(option);
+    console.log(score);
+  }
   return (
-    <button className={className=="" ?'Container-answer': `Container-answer ${className}`}  onClick={()=>validate(option)}>
+    <button className={className=="" ?'Container-answer': `Container-answer ${className}`}  onClick={()=>validateAnswer()}>
       <p className='opc'>{option}</p>
       <p className='answer'>{answer}</p>
       <p className='icon'>{correct ? 'bien' : 'Mal'}</p>

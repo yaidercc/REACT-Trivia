@@ -8,9 +8,7 @@ export const useQuestion = () => {
     const { data, isLoading } = useFetch();
     const { Counter, increment } = useCounter(-1,10);
     const [ currentQuestion, setcurrentQuestion ] = useState({question:"",answers:[],correct_answer:"",answered:false});
-    const [ triviaStatus, settriviaStatus ] = useState({finished:false,score:10});
-    let score=10;
-
+    const [ triviaStatus, settriviaStatus ] = useState(false);
     /**
      * Valida la respuesta elejida
      * @param {*} optionSelected opcion selccionada
@@ -24,16 +22,12 @@ export const useQuestion = () => {
 
         if(optionSelected!==currentQuestion.correct_answer){
             answers.find((answer)=>answer.option==optionSelected).class="bad";
-            // Disminuye el puntaje
-            score--;
-            settriviaStatus({...triviaStatus,score});
-            console.log(score);
         }
         answers.find((answer)=>answer.option==correct_answer).class="good";
         
         // Valida si el contador llego al limite de preguntas y muesta el boton de finalizar trivia
         if(Counter==data.data.results.length) {
-            settriviaStatus({...triviaStatus,finished:true});
+            settriviaStatus(true);
             return;
         }
 
@@ -49,7 +43,7 @@ export const useQuestion = () => {
     const questionStructure = () => {
         if(!isLoading){
             increment(1);
-            if(triviaStatus.finished) return;
+            if(triviaStatus) return;
             // Oculta el boton de siguiente pregunta
             setcurrentQuestion({...currentQuestion,answered:false});
 
@@ -113,7 +107,6 @@ export const useQuestion = () => {
         validateAnswer,
         isLoading,
         currentQuestion,
-        triviaStatus,
-        score
+        triviaStatus
     }
 }

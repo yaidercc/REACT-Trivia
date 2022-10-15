@@ -1,26 +1,17 @@
 
-import { useEffect } from 'react';
-import { useState } from 'react';
 import {useQuestion } from '../../hooks/index'
 import {Answers} from '../index';
 
 
-export const Questions = ({setScore}) => {
-    const [tr, settr] = useState(false)
+export const Questions = ({setState,state,score,setScore}) => {
+
     const { 
         questionStructure,
         validateAnswer,
         currentQuestion,
-        triviaStatus,
-        score
+        triviaStatus
         } 
     = useQuestion();
-
-    useEffect(() => {
-        setTimeout(() => {
-            console.log("From here: "+score);
-        }, 2000);
-    }, [tr])
     
 
     return (
@@ -34,10 +25,12 @@ export const Questions = ({setScore}) => {
                     correct={item.correct}
                     className={item.class}
                     validate={validateAnswer}
+                    setScore={setScore}
+                    score={score}
                 />
             ))}
             {currentQuestion.answered && <button onClick={()=>questionStructure()}>Siguiente</button> }
-            {triviaStatus.finished && <button onClick={()=>settr(true)}>Terminar</button> }
+            {triviaStatus && <button onClick={()=>setState({...state,showScore:true})}>Terminar</button> }
             {/* {triviaStatus.finished && <button onClick={()=>setScore({start:true, score})}>Terminar</button> } */}
         </>
     )
