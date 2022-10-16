@@ -1,0 +1,9 @@
+@import "../../styles/components/config";
+p{
+    font-weight: $fw-semibold;
+    .good{
+        color: $green-good;
+        font-weight: $fw-bold;
+        font-size: 1.8rem;
+    }
+}

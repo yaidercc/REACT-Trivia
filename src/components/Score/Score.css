@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap");
+html {
+  font-size: 62.5%;
+}
+
+p {
+  font-weight: 600;
+}
+
+p .good {
+  color: #60BF88;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+/*# sourceMappingURL=Score.css.map */

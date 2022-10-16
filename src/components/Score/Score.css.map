@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,yFAAI;AAmBZ,AAAA,IAAI,CAAA;EACA,SAAS,EAAE,KAAK;CACnB;;ADrBD,AAAA,CAAC,CAAA;EACG,WAAW,ECcF,GAAG;CDRf;;AAPD,AAEI,CAFH,CAEG,KAAK,CAAA;EACD,KAAK,ECAD,OAAO;EDCX,WAAW,ECYV,GAAG;EDXJ,SAAS,EAAE,MAAM;CACpB",
+    "sources": [
+        "Score.scss",
+        "../../styles/components/_config.scss"
+    ],
+    "names": [],
+    "file": "Score.css"
+}

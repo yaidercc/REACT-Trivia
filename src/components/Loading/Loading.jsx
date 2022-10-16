@@ -1,7 +1,17 @@
 import React from 'react'
-
+import "./Loading.scss"
 export const Loading = () => {
   return (
-    <div className="lds-ripple"><div></div><div></div></div>
+    <div class="lds-grid">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   )
 }
