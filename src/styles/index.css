@@ -14,7 +14,7 @@ body {
   font-size: 1.6rem;
 }
 
-h1 {
+h1, h2, h3 {
   color: #1D355D;
   font-weight: 600;
 }
@@ -37,6 +37,12 @@ h1 {
 .btn:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.btn.disabled {
+  background-color: initial;
+  cursor: initial;
+  border: 1px solid gray;
 }
 
 .btn.btn-primary {
@@ -73,8 +79,8 @@ h1 {
 .main-content {
   margin-left: auto;
   margin-right: auto;
-  height: 50vh;
-  width: 45rem;
+  height: auto;
+  width: 55rem;
   padding: 2rem;
   background-color: #FFFFFF;
   border-radius: 10px;

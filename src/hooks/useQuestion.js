@@ -28,11 +28,11 @@ export const useQuestion = () => {
         // Valida si el contador llego al limite de preguntas y muesta el boton de finalizar trivia
         if(Counter==data.data.results.length) {
             settriviaStatus(true);
-            return;
+            
         }
-
-        // Muestra el boton de siguiente pregunta
+        
         setcurrentQuestion({...currentQuestion,answers,answered:true});
+        // Muestra el boton de siguiente pregunta
 
     }   
 

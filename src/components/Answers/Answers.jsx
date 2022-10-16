@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaRegCheckCircle, } from 'react-icons/fa';
+import { FaRegCheckCircle, FaTimesCircle} from 'react-icons/fa';
 import PropTypes from 'prop-types'
 import './Answer.scss'
 
@@ -9,6 +9,7 @@ export const Answers = ({option, answer, correct, className,validate, setScore,s
     correct || setScore(score-1);
     validate(option);
   }
+  console.log(answered);
   return (
       <button className={className=="" ?'btn btn-secondary answer': `btn btn-secondary answer ${className}`}  onClick={()=>validateAnswer()}>
         <p className='opc'>{option}</p>
@@ -16,7 +17,7 @@ export const Answers = ({option, answer, correct, className,validate, setScore,s
         {answered 
           && 
             <p className='icon'> 
-              { correct ? <FaRegCheckCircle /> : ""}
+              { correct ? <FaRegCheckCircle /> : <FaTimesCircle/>}
             </p>
         }
       </button>
