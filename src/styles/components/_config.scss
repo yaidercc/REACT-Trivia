@@ -1,12 +1,11 @@
 // Imports
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap');
 // Colors
 $red-bad:#EA8282;
 $green-good:#60BF88;
 $purple:#9094DE;
 $orange:#F9A826;
-$dark-blue:#2F527B;
+$dark-blue:#1D355D;
 $white:#FFFFFF;
 
 // Fonts
@@ -16,8 +15,16 @@ $main-font:'Poppins', sans-serif;
 $fw-light:200;
 $fw-regular:400;
 $fw-semibold:600;
+$fw-bold:600;
 
 // size
 html{
     font-size: 62.5%;
+}
+
+// Responsive
+@mixin responsive($mobile){
+    @media (max-width:$mobile){
+        @content;
+    }
 }

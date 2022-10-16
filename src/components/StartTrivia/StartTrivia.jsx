@@ -6,9 +6,13 @@ export const StartTrivia = ({setStart,setScore}) => {
     setScore(10);
   }
   return (
-    <>
-        <h1>Iniciar Trivia</h1>
-        <button onClick={()=>startHandle()}>Iniciar</button>
-    </>
+      <div className='main-container center-column'>
+        <div className='main-content center-column'>
+          <img src="/assets/undraw_media_player_re_rdd2.svg" alt="Imagen inicio trivia" height={200} width={150}  />
+          <h1>Iniciar Trivia</h1>
+          <button className='btn btn-primary' onClick={()=>startHandle()}>Iniciar</button>
+        </div>
+      </div>
+    
   )
 }
