@@ -1,10 +1,20 @@
-.Container-answer{
-    border: 2px solid #fff;
-    background-color: blue;
-}
-.bad{
-    background-color: red;
-}
-.good{
-    background-color: green;
+@import "../../styles/components/config";
+
+.answer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 6rem;
+    margin-bottom: 2rem;
+    &.bad{
+        color: $white;
+        background-color: $red-bad;
+        border: none;
+    }
+    &.good{
+        color: $white;
+        background-color: $green-good;
+        border: none;
+    }
 }

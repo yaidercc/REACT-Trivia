@@ -51,7 +51,8 @@ export const useQuestion = () => {
             const questionStructure = {
                 question,
                 answers:[],
-                correct_answer:""
+                correct_answer:"",
+                answered:false
             };
 
             // Validando si la respuesta es de falso/verdadero o multiples

@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap");
+html {
+  font-size: 62.5%;
+}
+
+.answer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+  height: 6rem;
+  margin-bottom: 2rem;
+}
+
+.answer.bad {
+  color: #FFFFFF;
+  background-color: #EA8282;
+  border: none;
+}
+
+.answer.good {
+  color: #FFFFFF;
+  background-color: #60BF88;
+  border: none;
+}
+/*# sourceMappingURL=Answer.css.map */

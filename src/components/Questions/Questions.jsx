@@ -27,6 +27,7 @@ export const Questions = ({setState,state,score,setScore}) => {
                     validate={validateAnswer}
                     setScore={setScore}
                     score={score}
+                    answered={currentQuestion.answered}
                 />
             ))}
             {currentQuestion.answered && <button onClick={()=>questionStructure()}>Siguiente</button> }
