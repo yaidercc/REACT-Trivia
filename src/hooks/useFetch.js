@@ -11,7 +11,7 @@ export const useFetch = () => {
             ...state,
             isLoading: true
         })
-        const data = await axios.get("https://opentdb.com/api.php?amount=2");
+        const data = await axios.get("https://opentdb.com/api.php?amount=10");
 
         setstate({
             data,

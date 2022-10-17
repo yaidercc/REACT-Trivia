@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-image: url(../public//assets/background.png);
+  background-image: url(../assets/background.png);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -77,6 +77,12 @@ h1, h2, h3, h4 {
   height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .main-container {
+    margin: 0 1rem;
+  }
+}
+
 .main-content {
   margin-left: auto;
   margin-right: auto;
@@ -98,6 +104,7 @@ h1, h2, h3, h4 {
     border-radius: 10px;
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    margin: 1rem;
   }
 }
 /*# sourceMappingURL=index.css.map */

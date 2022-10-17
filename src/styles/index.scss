@@ -3,7 +3,7 @@
 @import "components/container";
 
 body{
-    background-image:url(../public//assets/background.png) ;
+    background-image:url(../assets/background.png) ;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -43,6 +43,9 @@ h1,h2,h3,h4{
 }
 .main-container{
     height: 100vh;
+    @include responsive(768px){
+        margin: 0 1rem;
+    }
 }
 .main-content{
     margin-left: auto;
@@ -50,5 +53,6 @@ h1,h2,h3,h4{
     @include content(55rem,auto);
     @include responsive(768px){
         @include content(90%,auto);
+        margin: 1rem;
     }
 }
