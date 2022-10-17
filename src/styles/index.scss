@@ -49,6 +49,6 @@ h1,h2,h3,h4{
     margin-right: auto;
     @include content(55rem,auto);
     @include responsive(768px){
-        @include content(90%,60vh);
+        @include content(90%,auto);
     }
 }
