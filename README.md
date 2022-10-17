@@ -1,6 +1,6 @@
 # Trivia
 
-Trivia website that contains different true/false or multiple choice questions from a wide variety of categories such as politics, television, film, fashion, etc.
+Trivia website where an api is consumed to display different true/false or multiple choice questions from a wide variety of categories like politics, tv, movies, fashion, etc.
 After answering 10 questions, you will be able to see a score corresponding to the number of correct questions.
 
 WEB URL: https://trivia-ycc.netlify.app/
