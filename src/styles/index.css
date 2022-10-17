@@ -14,15 +14,16 @@ body {
   font-size: 1.6rem;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   color: #1D355D;
   font-weight: 600;
+  text-align: center;
 }
 
 .btn {
   width: 150px;
   height: 40px;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   border-radius: .6rem;
   border: none;
   font-weight: 600;
@@ -51,7 +52,7 @@ h1, h2, h3 {
 }
 
 .btn.btn-secondary {
-  border: 0.4rem solid #9094DE;
+  border: 0.3rem solid #9094DE;
   background-color: transparent;
   color: #9094DE;
 }

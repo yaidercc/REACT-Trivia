@@ -1,7 +1,7 @@
 
-import {useQuestion } from '../../hooks/index'
-import {Answers, Loading} from '../index';
-import "./Questions.scss"
+import { useQuestion } from '../../hooks/index';
+import { Loading, Question} from '../index';
+import "./Questions.scss";
 
 export const Questions = ({setState,state,score,setScore}) => {
 
@@ -10,53 +10,32 @@ export const Questions = ({setState,state,score,setScore}) => {
         validateAnswer,
         currentQuestion,
         triviaStatus,
-        isLoading
+        isLoading,
+        lastQuestion
         } 
     = useQuestion();
-    
 
     return (
         <div className='main-container center-column'>
                 <div className='main-content center-column'>
-                    { !isLoading
+                    { 
+                        !isLoading
                             ?
-                            <>
-                                    <h3>{currentQuestion.question}</h3>
-                                    {currentQuestion.answers.map(item=>(
-                                        <Answers 
-                                            key={item.option}
-                                            option={item.option}
-                                            answer={item.answer}
-                                            correct={item.correct}
-                                            className={item.class}
-                                            validate={validateAnswer}
-                                            setScore={setScore}
-                                            score={score}
-                                            answered={currentQuestion.answered}
-                                        />
-                                    ))}
-                                    { triviaStatus ||
-                                        <button 
-                                        className={currentQuestion.answered ?'btn btn-primary':'btn disabled'} 
-                                        disabled={!currentQuestion.answered} 
-                                        onClick={()=>questionStructure()}>
-                                            Siguiente
-                                        </button> 
-                                    }
-                                    {triviaStatus && 
-                                        <button 
-                                            className='btn btn-secondary'
-                                            onClick={()=>setState({...state,showScore:true})}>
-                                                Terminar
-                                        </button> 
-                                    }
-                            </>
+                                <Question 
+                                    questionStructure={questionStructure} 
+                                    currentQuestion={currentQuestion} 
+                                    lastQuestion={lastQuestion}
+                                    triviaStatus={triviaStatus}
+                                    setState={setState}
+                                    state={state}
+                                    score={score}
+                                    setScore={setScore}
+                                    validateAnswer={validateAnswer}
+                                    />
                             :
-                            <Loading/>
+                                <Loading/>
                     }
-                    
                 </div>
-
         </div>
     )
 }

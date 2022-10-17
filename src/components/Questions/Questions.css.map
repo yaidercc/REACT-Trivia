@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACCA,OAAO,CAAC,yFAAI;AAmBZ,AAAA,IAAI,CAAA;EACA,SAAS,EAAE,KAAK;CACnB;;ADrBD,AAAA,MAAM,CAAA;EACF,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CAI1B;;AAPD,AAII,MAJE,CAIF,IAAI,CAAA;EACA,WAAW,EAAE,IAAI;CACpB;;AAEL,AACI,EADF,CACE,IAAI,CAAA;EACA,KAAK,ECLL,OAAO;CDMV",
     "sources": [
-        "Questions.scss"
+        "Questions.scss",
+        "../../styles/components/_config.scss"
     ],
     "names": [],
     "file": "Questions.css"

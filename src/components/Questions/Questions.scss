@@ -1,0 +1,14 @@
+@import "../../styles/components/config";
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+        margin-left: 1rem;
+    }
+}
+h4{
+    span{
+        color: $orange
+    }
+}

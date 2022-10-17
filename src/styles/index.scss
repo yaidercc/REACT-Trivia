@@ -12,9 +12,10 @@ body{
     font-family: $main-font;
     font-size: 1.6rem;
 }
-h1,h2,h3{
+h1,h2,h3,h4{
     color: $dark-blue;
     font-weight: $fw-bold;
+    text-align: center
 }
 .btn {
     @include Btn(150px,40px);

@@ -7,7 +7,7 @@ export const useQuestion = () => {
 
     const { data, isLoading } = useFetch();
     const { Counter, increment } = useCounter(-1,10);
-    const [ currentQuestion, setcurrentQuestion ] = useState({question:"",answers:[],correct_answer:"",answered:false});
+    const [ currentQuestion, setcurrentQuestion ] = useState({category:"",question:"",answers:[],correct_answer:"",answered:false});
     const [ triviaStatus, settriviaStatus ] = useState(false);
     /**
      * Valida la respuesta elejida
@@ -47,9 +47,10 @@ export const useQuestion = () => {
             // Oculta el boton de siguiente pregunta
             setcurrentQuestion({...currentQuestion,answered:false});
 
-            const { question,correct_answer,incorrect_answers } = data.data.results[Counter];
+            const { category,question,correct_answer,incorrect_answers } = data.data.results[Counter];
             const questionStructure = {
-                question,
+                category:decodeHTMLEntities(category),
+                question:`${Counter+1}. ${decodeHTMLEntities(question)}`,
                 answers:[],
                 correct_answer:"",
                 answered:false
@@ -69,7 +70,7 @@ export const useQuestion = () => {
             
             questionStructure.answers.push({
                 option: Options[randomPos],
-                answer: correct_answer,
+                answer: decodeHTMLEntities(correct_answer),
                 correct: true,
                 class: ''
             })
@@ -84,7 +85,7 @@ export const useQuestion = () => {
 
                 questionStructure.answers.push({
                     option: item,
-                    answer: incorrect_answers[index],
+                    answer: decodeHTMLEntities(incorrect_answers[index]),
                     correct: false,
                     class: ''
                 })
@@ -98,6 +99,17 @@ export const useQuestion = () => {
         }
         
     }
+
+    /**
+     * Funcion para convertir texto con html entities a texto normal
+     * @param {*} text 
+     * @returns 
+     */
+    const decodeHTMLEntities=(text)=> {
+        let textArea = document.createElement('textarea');
+        textArea.innerHTML = text;
+        return textArea.value;
+    }
     
     useEffect(() => {
         questionStructure();
@@ -108,6 +120,7 @@ export const useQuestion = () => {
         validateAnswer,
         isLoading,
         currentQuestion,
-        triviaStatus
+        triviaStatus,
+        lastQuestion:Counter==data?.data.results.length,
     }
 }
