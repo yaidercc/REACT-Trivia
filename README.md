@@ -5,7 +5,7 @@ After answering 10 questions, you will be able to see a score corresponding to t
 
 WEB URL: https://trivia-ycc.netlify.app/
 
-Screenshots:
+## Screenshots:
 
 ![image](https://user-images.githubusercontent.com/55888825/196070602-3dc28d39-cdcd-4f9d-8bf8-57eaddc22a9d.png)
 
@@ -16,3 +16,11 @@ Screenshots:
 ![image](https://user-images.githubusercontent.com/55888825/196070584-79e0827a-608d-4c6f-ac9f-f4f19de5814f.png)
 
 
+## Technologies used:
+
+<a href="#" target="_blank"> 
+    <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" alt="javascript" width="40" height="40"/> 
+</a>       
+<a href="#" target="_blank"> 
+  <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
+</a>                       
