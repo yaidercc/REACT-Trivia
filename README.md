@@ -21,6 +21,9 @@ API URL: [https://opentdb.com/](https://opentdb.com/api_config.php)
 ## Technologies used:
 
 <a href="#" target="_blank"> 
+  <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain.svg" alt="html5" width="40" height="40"/> 
+</a>   
+<a href="#" target="_blank"> 
     <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" alt="javascript" width="40" height="40"/> 
 </a>       
 <a href="#" target="_blank"> 
