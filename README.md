@@ -4,6 +4,7 @@ Trivia website where an api is consumed to display different true/false or multi
 After answering 10 questions, you will be able to see a score corresponding to the number of correct questions.
 
 WEB URL: https://trivia-ycc.netlify.app/
+
 API URL: [https://opentdb.com/](https://opentdb.com/api_config.php)
 
 ## Screenshots:
