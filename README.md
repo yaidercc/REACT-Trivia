@@ -24,3 +24,4 @@ WEB URL: https://trivia-ycc.netlify.app/
 <a href="#" target="_blank"> 
   <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
 </a>                       
+<a href="#" target="_blank"> <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a>
